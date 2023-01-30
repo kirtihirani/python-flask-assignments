@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <form action="/updateStudent/{{stu.sno}}" method="POST">
+        <h3 class="my-3">Update your details</h3>
+        <div class="mb-3">
+          <label for="enroll" class="form-label">Enrollment</label>
+          <input type="text" class="form-control" value="{{stu.enroll}}" id="enroll" name="enroll" aria-describedby="emailHelp">
+          
+        </div>
+        <div class="mb-3">
+          <label for="firstname" class="form-label">First name</label>
+          <input type="text" class="form-control" value="{{stu.first_name}}" name="firstname" id="firstname">
+        </div>
+        <div class="mb-3">
+            <label for="lastname" class="form-label">Last name</label>
+            <input type="text" class="form-control" value ="{{stu.last_name}}" name="lastname" id="lastname">
+          </div>
+        <div class="mb-3">
+            <label for="dob" class="form-label">Date Of Birth</label>
+            <input type="text" class="form-control" value="{{stu.dob}}" name="dob" id="dob">
+        </div>
+        <div class="my-3">
+            <label class="form-label">Gender</label> 
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" value="male" id="male">
+            <label class="form-check-label" for="male">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" value="female" id="female" >
+            <label class="form-check-label" for="female">
+              Female           
+            </label>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-dark btn-sm my-3 ">Save Changes </button>
+      </form>
+</div>
+    
+{% endblock body %}
